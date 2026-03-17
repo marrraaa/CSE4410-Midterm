@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=20d8fa297fcedf14393d8d3dfd736d34&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Sprites/97bc8472-20c5-496f-b2d1-7085831b0068.jpg?fileID=21300000&amp;guid=bc528e12434b9b240a48f62f40103ecb&amp;type=3#97bc8472-20c5-496f-b2d1-7085831b0068&quot;);">
+        <ui:Label tabindex="-1" text="Jungle Run!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Header" class="header" style="margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px;" />
+        <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartGameButton" class="button" />
+        <ui:Button text="Quit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuitButton" class="button" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Sprites/QuitButtonSprite.png?fileID=21300000&amp;guid=eacbfda1bc1f5bf4f81cde7db6c9aa38&amp;type=3#QuitButtonSprite&quot;);" />
+    </ui:VisualElement>
+</ui:UXML>

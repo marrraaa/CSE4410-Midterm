@@ -1,0 +1,50 @@
+#background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.header {
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+    -unity-font: url("project://database/Assets/Mornilo-Regular.ttf?fileID=12800000&guid=73ccdcf87f216ed4db0440fa417b74da&type=3#Mornilo-Regular");
+    -unity-font-definition: initial;
+    -unity-text-align: upper-center;
+    background-image: url("project://database/Assets/UI%20Toolkit/Sprites/GameTitleBackground.png?fileID=21300000&guid=1729adf52225d194eb3373692ba88e8a&type=3#GameTitleBackground");
+    margin-top: 80px;
+    margin-right: 80px;
+    margin-bottom: 80px;
+    margin-left: 80px;
+}
+
+.button {
+    font-size: 20px;
+    width: 220px;
+    height: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    align-self: center;
+    background-image: url("project://database/Assets/UI%20Toolkit/Sprites/StartButtonSprite.png?fileID=21300000&guid=88cfb64f54a73944ea50d071548937db&type=3#StartButtonSprite");
+    -unity-font: url("project://database/Assets/Mornilo-Regular.ttf?fileID=12800000&guid=73ccdcf87f216ed4db0440fa417b74da&type=3#Mornilo-Regular");
+    -unity-font-definition: initial;
+    color: rgb(0, 0, 0);
+    margin-top: 80px;
+    margin-right: 80px;
+    margin-bottom: 80px;
+    margin-left: 80px;
+    background-color: rgba(0, 0, 0, 0);
+    scale: 2 2;
+    transition-duration: 0.35s;
+    transition-timing-function: ease;
+}
+
+.button:hover {
+    scale: 2.1 2.1;
+    -unity-background-image-tint-color: rgb(175, 154, 125);
+    transition-timing-function: ease-in-out-bounce;
+}
