@@ -50,11 +50,11 @@ public class BallChase : MonoBehaviour
 
     void Update()
     {
-        // Get the player's Rigidbody to check movement speed
-        Rigidbody playerRB = player.GetComponent<Rigidbody>();
+        // Get the player's controller to check movement speed
+        CharacterController playerController = player.GetComponent<CharacterController>();
 
         // If the player begins moving, the game starts
-        if (!gameStarted && playerRB.velocity.magnitude > 0.1f)
+        if (!gameStarted && playerController.velocity.magnitude > 0.1f)
         {
             gameStarted = true;
         }
@@ -63,7 +63,8 @@ public class BallChase : MonoBehaviour
         if (gameStarted)
         {
             // Calculate the direction from the ball to the player
-            Vector3 direction = (player.position - transform.position).normalized;
+            Vector3 playerPos = new Vector3(0, transform.position.y, player.position.z);
+            Vector3 direction = (playerPos - transform.position).normalized;
 
             // If challenge mode is active, increase the force
             float currentForce = moveForce;
@@ -107,14 +108,14 @@ public class BallChase : MonoBehaviour
         // Check if the ball hit the player
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Get the PlayerCharacter script from the player
-            PlayerCharacter player = collision.gameObject.GetComponent<PlayerCharacter>();
+            // Get the player script from the player
+            playerMovement player = collision.gameObject.GetComponent<playerMovement>();
 
             // If the script exists, deal damage to the player
-            if (player != null)
+            /* if (player != null)
             {
                 player.Hurt(damageAmount);
-            }
+            } */
         }
     }
 }
