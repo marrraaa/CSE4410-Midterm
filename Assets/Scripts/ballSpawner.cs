@@ -36,6 +36,13 @@ public class ballSpawner : MonoBehaviour
 
             ball = Instantiate(ballPrefab);
             ball.transform.position = spawnLocation;
+
+            //make sure ball does not pass up player
+            BallChase chase = ball.GetComponent<BallChase>();
+            if (chase != null)
+            {
+                chase.keepDistance = distanceFromPlayer;
+            }
         }
     }
 }

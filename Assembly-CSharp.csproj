@@ -63,10 +63,25 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\PieChartMesh.cs" />
+    <Compile Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\RadialCounter.cs" />
+    <Compile Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\EllipseMesh.cs" />
+    <Compile Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\SplitLineGraph.cs" />
+    <Compile Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\PieChart.cs" />
+    <Compile Include="Assets\UI Toolkit\UnityThemes\MainMenuEvents.cs" />
     <Compile Include="Assets\Scripts\ballSpawner.cs" />
     <Compile Include="Assets\Scripts\BallChase.cs" />
+    <Compile Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\MeshBase.cs" />
     <Compile Include="Assets\Scripts\tunnelSpawner.cs" />
     <Compile Include="Assets\Scripts\playerMovement.cs" />
+    <Compile Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\SplitLineGraphMesh.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\UI Toolkit\UnityThemes\MainMenuStyle.uss" />
+    <None Include="Assets\UI Toolkit\UnityThemes\MainMenuVisualTree.uxml" />
+    <None Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\PieChart.uss" />
+    <None Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\SplitLineGraph.uss" />
+    <None Include="Assets\UI Toolkit\UnityThemes\ChartLibrary\RadialCounter.uss" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

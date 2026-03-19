@@ -6,6 +6,7 @@ public class BallChase : MonoBehaviour
 {
     // Reference to the player object so the ball can follow it
     public Transform player;
+    public float keepDistance = 5.0f;
     public float moveForce = 15f;
     public float spinSpeed = 50f;
     
@@ -23,6 +24,7 @@ public class BallChase : MonoBehaviour
     public Transform mainCamera;
     public float shakeAmount = 0.15f;
     public float shakeSpeed = 20f;
+    private float yPosition;
 
     // Original camera position so it can reset after shaking
     private Vector3 cameraOriginalPos;
@@ -31,6 +33,8 @@ public class BallChase : MonoBehaviour
     {
         // Get the Rigidbody attached to the ball
         rb = GetComponent<Rigidbody>();
+
+        yPosition = transform.position.y;
 
         // If player not assigned in Inspector, find object tagged "Player"
         if (player == null)
@@ -50,6 +54,10 @@ public class BallChase : MonoBehaviour
 
     void Update()
     {
+        if (player == null)
+        {
+            return;
+        }
         // Get the player's controller to check movement speed
         CharacterController playerController = player.GetComponent<CharacterController>();
 
@@ -62,19 +70,33 @@ public class BallChase : MonoBehaviour
         // Once the game has started, the ball begins chasing
         if (gameStarted)
         {
-            // Calculate the direction from the ball to the player
-            Vector3 playerPos = new Vector3(0, transform.position.y, player.position.z);
-            Vector3 direction = (playerPos - transform.position).normalized;
+            //keep ball from falling
+            transform.position = new Vector3(player.position.x, yPosition, transform.position.z);
 
-            // If challenge mode is active, increase the force
-            float currentForce = moveForce;
-            if (challengeMode)
+            float actualDist = player.position.z - transform.position.z;
+
+            if (actualDist > keepDistance)
             {
-                currentForce *= challengeSpeedMultiplier;
+                // Calculate the direction from the ball to the player
+                Vector3 playerPos = new Vector3(0, yPosition, player.position.z);
+                Vector3 direction = (playerPos - transform.position).normalized;
+
+                // If challenge mode is active, increase the force
+                float currentForce = moveForce;
+                if (challengeMode)
+                {
+                    currentForce *= challengeSpeedMultiplier;
+                }
+
+                // Apply force toward the player so the ball rolls
+                rb.AddForce(direction * currentForce);
+            }
+            else
+            {
+                //slows down as player slows down
+                rb.velocity = new Vector3(0, 0, playerController.velocity.z);
             }
 
-            // Apply force toward the player so the ball rolls
-            rb.AddForce(direction * currentForce);
             // Rotate the ball so it spins while rolling
             transform.Rotate(Vector3.right * spinSpeed * Time.deltaTime);
 
@@ -112,10 +134,14 @@ public class BallChase : MonoBehaviour
             playerMovement player = collision.gameObject.GetComponent<playerMovement>();
 
             // If the script exists, deal damage to the player
-            /* if (player != null)
+            if (player != null)
             {
-                player.Hurt(damageAmount);
-            } */
+                //player.Hurt(damageAmount);
+                Debug.Log ("Game Over! Ball ran over player");
+
+                //stop everything in game
+                Time.timeScale = 0f;
+            }
         }
     }
 }
