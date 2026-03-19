@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class MainMenuEvents : MonoBehaviour
+public class MainMenuScrpts : MonoBehaviour
 {
     private UIDocument _document;
     private Button _startButton;

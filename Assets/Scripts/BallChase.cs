@@ -10,8 +10,6 @@ public class BallChase : MonoBehaviour
     public float moveForce = 15f;
     public float spinSpeed = 50f;
     
-    // Damage the ball does when it hits the player
-    public int damageAmount = 5;
     // Rigidbody component attached to the ball
     private Rigidbody rb;
     // Tracks whether the player has started running (starts the game)
@@ -124,24 +122,5 @@ public class BallChase : MonoBehaviour
         mainCamera.localPosition = cameraOriginalPos + new Vector3(offsetX, offsetY, 0);
     }
 
-    //collison handling 
-    void OnCollisionEnter(Collision collision)
-    {
-        // Check if the ball hit the player
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // Get the player script from the player
-            playerMovement player = collision.gameObject.GetComponent<playerMovement>();
-
-            // If the script exists, deal damage to the player
-            if (player != null)
-            {
-                //player.Hurt(damageAmount);
-                Debug.Log ("Game Over! Ball ran over player");
-
-                //stop everything in game
-                Time.timeScale = 0f;
-            }
-        }
-    }
+   
 }
