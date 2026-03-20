@@ -8,7 +8,7 @@ public class ballSpawner : MonoBehaviour
     [SerializeField] GameObject ballPrefab; //ball field in inspector
     private GameObject ball;
     //ball will spawn 5 seconds after game has started
-    public float spawnTime = 5.0f;
+    public float spawnTime = 20.0f;
     public float distanceFromPlayer = 5.0f; //spawn 5 units behind player
 
     // Start is called before the first frame update

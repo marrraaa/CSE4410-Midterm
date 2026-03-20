@@ -8,10 +8,10 @@ public class tunnelSpawner : MonoBehaviour
 
     private Transform playerTransform;
     private int locZ = -15;
-    private int tunnelLength = 10;
+    private int tunnelLength = 100;
     private int tunnOnScreen = 6;
     private int lastTunnel = 0;
-    private int safe = 15;
+    private int safe = 80;
 
     private List <GameObject> curTunnels;
     // Start is called before the first frame update

@@ -6,7 +6,7 @@ public class BallChase : MonoBehaviour
 {
     // Reference to the player object so the ball can follow it
     public Transform player;
-    public float keepDistance = 5.0f;
+    public float keepDistance = 10.0f;
     public float moveForce = 15f;
     public float spinSpeed = 50f;
     
@@ -89,11 +89,7 @@ public class BallChase : MonoBehaviour
                 // Apply force toward the player so the ball rolls
                 rb.AddForce(direction * currentForce);
             }
-            else
-            {
-                //slows down as player slows down
-                rb.velocity = new Vector3(0, 0, playerController.velocity.z);
-            }
+            
 
             // Rotate the ball so it spins while rolling
             transform.Rotate(Vector3.right * spinSpeed * Time.deltaTime);
