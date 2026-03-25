@@ -61,11 +61,6 @@ public class DeathScreenScript : MonoBehaviour
     // REMOVE WHEN ADDED DEATH MECHANIC // // REMOVE WHEN ADDED DEATH MECHANIC // 
     private void Update()
     {
-        // Press K to show death screen
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            ShowDeathScreen();
-        }
 
         // Optional: press H to hide it again
         if (Input.GetKeyDown(KeyCode.H))

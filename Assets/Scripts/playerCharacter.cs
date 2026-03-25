@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerCharacter : MonoBehaviour
 {
     private int health;
+    public DeathScreenScript deathScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +17,15 @@ public class playerCharacter : MonoBehaviour
     {
         health -= damage;
         Debug.Log($"Health: {health}");
+        if(health <= 0)
+        {
+            die();
+        }
+    }
+
+    void die()
+    {
+        Debug.Log("Player got ran over");
+        deathScreen.ShowDeathScreen();
     }
 }

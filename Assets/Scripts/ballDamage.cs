@@ -16,11 +16,7 @@ public class ballDamage : MonoBehaviour
             // If the script exists, deal damage to the player
             if (player != null)
             {
-                //player.Hurt(damageAmount);
-                Debug.Log("Game Over! Ball ran over player");
-
-                //stop everything in game
-                Time.timeScale = 0f;
+                player.Hurt(damageAmount);
             }
     }
 }

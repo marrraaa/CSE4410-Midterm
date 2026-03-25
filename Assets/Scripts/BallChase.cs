@@ -88,6 +88,11 @@ public class BallChase : MonoBehaviour
 
                 // Apply force toward the player so the ball rolls
                 rb.AddForce(direction * currentForce);
+                float maxSpeed = 10f;
+                if (rb.velocity.magnitude > maxSpeed)
+                {
+                    rb.velocity = rb.velocity.normalized * maxSpeed;
+                }
             }
             
 

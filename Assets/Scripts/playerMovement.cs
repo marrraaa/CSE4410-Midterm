@@ -9,7 +9,7 @@ public class playerMovement : MonoBehaviour
 
     private float speed = 10.0f;
     public float gravity = -9.8f;
-    private float constantSpeed = 20.0f;
+    private float constantSpeed = 10.0f;
     private float jump = 7.0f;
     private float vertical;
     // Start is called before the first frame update
